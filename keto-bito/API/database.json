@@ -27,7 +27,8 @@
       "shoppingLists": [
         {
           "id": 1,
-          "userID": 1
+          "userID": 1,
+          "shoppingListId": 1
         }
       ]
 }
