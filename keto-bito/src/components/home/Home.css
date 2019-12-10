@@ -1,0 +1,32 @@
+#homeBackground {
+  position: fixed;
+  left: 0px;
+  top: 0px;
+  width: 100%;
+  height: 100%;
+  background-image: url('./squirrel.jpg');
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: cover;
+  background-position: center top;
+  z-index: -1;
+}
+
+#welcomeHomePageHeader {
+  color: white;
+  text-align: center;
+  margin-top: 50px;
+}
+
+#loginButton {
+  display: flex;
+  justify-content: center;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* img {
+  max-width:50%;
+  max-height:50%;
+} */
+
