@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { Link } from 'react-router-dom'
 import ApiManager from '../modules/ApiManager';
 
 
@@ -7,8 +8,7 @@ class Login extends Component {
     // Set initial state
     state = {
         email: "",
-        password: "",
-        confirmPassword: ""
+        password: ""
     }
 
     // Update state whenever an input field is edited
@@ -53,12 +53,11 @@ class Login extends Component {
                                     placeholder="Password"
                                     required="" />
                             </div>
-                            <button type="submit">
-                                Sign in
-                    </button>
+                            <button type="submit">Sign in</button>
                         </fieldset>
                     </div>
                 </form>
+                <Link className="nav-link" to="/register">Register New Account</Link>
             </div>
         )
     }

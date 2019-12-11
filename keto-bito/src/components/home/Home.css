@@ -4,7 +4,7 @@
   top: 0px;
   width: 100%;
   height: 100%;
-  background-image: url('./squirrel.jpg');
+  background-image: url('./ketofood.jpg');
   background-repeat: no-repeat;
   background-attachment: fixed;
   background-size: cover;
@@ -18,7 +18,7 @@
   margin-top: 50px;
 }
 
-#loginButton {
+/* #loginButton {
   display: flex;
   justify-content: center;
   margin-left: auto;
@@ -28,5 +28,5 @@
 /* img {
   max-width:50%;
   max-height:50%;
-} */
+} */ 
 

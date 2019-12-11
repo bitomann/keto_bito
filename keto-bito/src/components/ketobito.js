@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import './Ketobito.css'
-// import NavBar from './nav/NavBar'
-// import ApplicationViews from './ApplicationViews'
+import ApplicationViews from "./ApplicationViews";
+import NavBar from "./nav/NavBar";
 // import ApiManager from "./modules/ApiManager";
 
 class Ketobito extends Component {

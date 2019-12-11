@@ -56,11 +56,6 @@ class Registration extends Component {
                     <fieldset>
                         <h3>Register</h3>
                         <div className="formgrid">
-                            <label htmlFor="inputName">Name: </label>
-                            <input onChange={this.handleFieldChange} type="name"
-                                id="name"
-                                placeholder="Name"
-                                required="" />
                             <label htmlFor="inputEmail">Email address: </label>
                             <input onChange={this.handleFieldChange} type="email"
                                 id="email"
