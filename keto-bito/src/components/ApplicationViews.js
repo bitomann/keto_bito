@@ -3,7 +3,7 @@ import React, { Component } from "react";
 // *****************  HOME  ***********************
 import Home from "./home/Home";
 import Login from "./auth/Login";
-// import Registration from "./auth/RegisterAccount";
+import Registration from "./auth/RegisterAccount";
 // *****************  FORM  ***********************
 // import ArticlesForm from "./articles/ArticlesForm";
 // *****************  LIST  ***********************
@@ -30,10 +30,10 @@ export default class ApplicationViews extends Component {
             />
           }}
         />
-        {/* <Route exact path="/register" render={props => {
+        <Route exact path="/register" render={props => {
           return <Registration {...this.props}{...props} />
         }}
-        /> */}
+        />
 
         {/* FOODS
         <Route
