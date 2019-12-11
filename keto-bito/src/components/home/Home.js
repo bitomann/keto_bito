@@ -9,10 +9,8 @@ class Home extends Component {
             <div id="homeBackground" >
             </div>
             <div>
-                <h1 id="welcomeHomePageHeader">Welcome to Nutshell</h1>
-                <div id="loginButton">
-                <Link to={`/login`}><button className="btn btn-primary" >Login</button></Link>
-                </div>
+                <h1 id="welcomeHomePageHeader">A GUIDE TO EATING THE FOODS YOU LIKE</h1>
+
             </div>
             </>
         )

@@ -1,10 +1,10 @@
 import React, { Component } from "react";
-import NavBar from './nav/NavBar'
-import ApplicationViews from './ApplicationViews'
-import '.';
-import ApiManager from "./modules/ApiManager";
+import './Ketobito.css'
+// import NavBar from './nav/NavBar'
+// import ApplicationViews from './ApplicationViews'
+// import ApiManager from "./modules/ApiManager";
 
-class Nutshell extends Component {
+class Ketobito extends Component {
   // user doesn't exist by default
   state = {
     user: false
@@ -44,4 +44,4 @@ class Nutshell extends Component {
   }
 }
 
-export default ketobito;
+export default Ketobito;

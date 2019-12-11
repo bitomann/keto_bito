@@ -1,4 +1,5 @@
 import React, { Component } from "react"
+import ApiManager from "../modules/ApiManager"
 
 class Registration extends Component {
 

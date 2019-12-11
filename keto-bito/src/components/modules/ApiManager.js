@@ -1,8 +1,7 @@
 // This module handles all calls to our API. 
-// authors:  Caroline Brownlee, Bito Mann, Julian Garcia, Sam Pita //
 
 const remoteURL = "http://localhost:5002"
-// TableName = array (events, tasks, messages, articles, friends, users).
+// TableName = array (users, foods, savedFoods, shoppingLists).
 
 export default {
     // This fetch call gets one object from tableName.

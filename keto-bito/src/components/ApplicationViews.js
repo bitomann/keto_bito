@@ -30,92 +30,56 @@ export default class ApplicationViews extends Component {
             />
           }}
         />
-        <Route exact path="/register" render={props => {
+        {/* <Route exact path="/register" render={props => {
           return <Registration {...this.props}{...props} />
         }}
-        />
-        {/* FRIENDS */}
-        <Route
-          path="/friends" render={props => {
-            if (this.props.user) {
-              return <FriendsList
-                {...props}
-                {...this.props}
-              />
-            } else {
-              return <Redirect to="login" />
-            }
-          }}
-        />
-        {/* MESSAGES */}
-        <Route
-          exact path="/messages" render={props => {
-            if (this.props.user) {
-              return <MessagesList
-                {...props}
-                {...this.props}
-              />
-            } else {
-              return <Redirect to="login" />
-            }
-          }}
-        />
-        <Route
-          path="/messages/new" render={props => {
-            return <MessageForm {...props} />
-          }}
-        />
+        /> */}
 
+        {/* FOODS
         <Route
-          exact path="/messages/:messageId(\d+)/edit" render={props => {
-            return <MessageEditForm {...props} />
-          }} />
-        {/* TASKS */}
-        <Route
-          exact path="/tasks" render={props => {
-            return <TasksList {...props} />
+          exact path="/foods" render={props => {
+            return <FoodsList {...props} />
 
           }}
         />
-        <Route path="/tasks/new" render={props => {
-          return <TaskForm {...props} />
+        <Route path="/foods/new" render={props => {
+          return <FoodForm {...props} />
         }}
         />
         <Route
-          path="/tasks/:taskId(\d+)/edit" render={props => {
-            return <TaskEditForm {...props} />
+          path="/foods/:foodId(\d+)/edit" render={props => {
+            return <FoodEditForm {...props} />
           }}
           />
 
-
         <Route
-          path="/tasks" render={props => {
+          path="/foods" render={props => {
             return null
-            // Remove null and return the component which will show the user's tasks
+            // Remove null and return the component which will show the user's foods
           }}
         />
-        {/* ARTICLES */}
-        <Route 
-          exact path="/articles" render={props => {
-            return <ArticlesList 
+        {/* SHOPPINGLISTS */}
+        {/* <Route 
+          exact path="/shoppingLists" render={props => {
+            return <ShoppingListsList 
             {...props} />
         }}
         />
 
-        <Route path="/articles/new" render={props => {
-          return <ArticlesForm 
+        <Route path="/shoppingLists/new" render={props => {
+          return <ShoppingListsForm 
           {...props} />
         }}
         />
 
         <Route
-          path="/articles/:articleId(\d+)/edit" render={props => {
-            return <ArticlesEditForm 
+          path="/shoppingLists/:shoppingListId(\d+)/edit" render={props => {
+            return <ShoppingListsEditForm 
             {...props} />
         }}
-        />
-        {/* EVENTS */}
-        <Route
+        /> */}
+        {/* SAVED FOODS??? */}
+        {/* <Route
           exact path="/events" render={props => {
             if (this.props.user) {
               return <EventsList
@@ -134,7 +98,7 @@ export default class ApplicationViews extends Component {
         <Route path="/events/:eventId(\d+)/edit" render={props => {
           return <EventEditForm {...props} />
         }}
-        />
+        /> */}
       </React.Fragment>
     );
   }
