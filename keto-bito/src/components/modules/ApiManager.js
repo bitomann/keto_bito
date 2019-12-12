@@ -28,13 +28,13 @@ export default {
             .then(result => result.json())
     },
     // This fetch call posts a new object to tableName.  
-    post(tableName, newEvent) {
+    post(tableName, newFood) {
         return fetch(`${remoteURL}/${tableName}`, {
             method: "POST",
             headers: {
                 "Content-Type": "application/json"
             },
-            body: JSON.stringify(newEvent)
+            body: JSON.stringify(newFood)
         }).then(data => data.json())
     },
     patch(tableName, editedObject) {
@@ -57,17 +57,17 @@ export default {
         }).then(data => data.json());
     },
     // BELOW FETCH CALLS ARE FOR AUTHENTICATION
-    // getLoggedInUser(userId) {
-    //     return fetch(`${remoteURL}/users/${userId}`)
-    //         .then(response => response.json())
-    // },
-    // getLoggedInUsersTableData(userId, tableName) {
-    //     return fetch(`${remoteURL}/users/${userId}&${tableName}?_expand=user`)
-    //         .then(response => response.json())
-    // },
-    // getAllWithUserNames(tableName) {
-    //     return fetch(`${remoteURL}/${tableName}?_expand=user`).then(result => result.json())
-    // },
+    getLoggedInUser(userId) {
+        return fetch(`${remoteURL}/users/${userId}`)
+            .then(response => response.json())
+    },
+    getLoggedInUsersTableData(userId, tableName) {
+        return fetch(`${remoteURL}/users/${userId}&${tableName}?_expand=user`)
+            .then(response => response.json())
+    },
+    getAllWithUserNames(tableName) {
+        return fetch(`${remoteURL}/${tableName}?_expand=user`).then(result => result.json())
+    },
     getUserData() {
         return fetch(`${remoteURL}/users`)
             .then(response => response.json())

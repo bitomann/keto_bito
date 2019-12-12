@@ -1,39 +1,49 @@
 {
-    "users": [
-      {
-        "id": 1,
-        "email": "mopholili@rocks.com",
-        "password": "123"
-      },
-      {
-        "id": 2,
-        "email": "mama@rocks.com",
-        "password": "456"
-      }
-    ],
-
-    "foods": [
-      {
-        "id": 1,
-        "userId": 1,
-        "name": "Keto ICE CREAM!",
-        "description": "Über low carb! Muy delicioso!"
-      }
-    ],
-
-    "savedFoods": [
-        {
-          "id": 1,
-          "foodID": 1,
-          "shoppingListId": 1
-        }
-      ],
-
-      "shoppingLists": [
-        {
-          "id": 1,
-          "userID": 1,
-          "shoppingListId": 1
-        }
-      ]
+  "users": [
+    {
+      "id": 1,
+      "email": "mopholili@rocks.com",
+      "password": "123"
+    },
+    {
+      "id": 2,
+      "email": "mama@rocks.com",
+      "password": "456"
+    }
+  ],
+  "foods": [
+    {
+      "id": 1,
+      "userId": 1,
+      "name": "Keto ICE CREAM!",
+      "description": "Über low carb! Muy delicioso!"
+    },
+    {
+      "name": "Hamburger",
+      "description": "MEat",
+      "userId": 1,
+      "id": 2
+    },
+    {
+      "name": "cheese",
+      "description": "yellow",
+      "userId": 1,
+      "id": 3,
+      "addToList": false
+    }
+  ],
+  "savedFoods": [
+    {
+      "id": 1,
+      "foodID": 1,
+      "shoppingListId": 1
+    }
+  ],
+  "shoppingLists": [
+    {
+      "id": 1,
+      "userID": 1,
+      "shoppingListId": 1
+    }
+  ]
 }
