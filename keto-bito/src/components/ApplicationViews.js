@@ -14,6 +14,8 @@ import Registration from "./auth/RegisterAccount";
 
 export default class ApplicationViews extends Component {
 
+  isAuthenticated = () => localStorage.getItem("credentials") !== null
+
   render() {
     return (
       <React.Fragment>

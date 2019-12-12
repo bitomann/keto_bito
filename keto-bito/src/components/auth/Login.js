@@ -39,7 +39,7 @@ class Login extends Component {
                 <form onSubmit={this.handleLogin}>
                     <div>
                         <fieldset>
-                            <h3>Please sign in</h3>
+                            <h3>Please Login</h3>
                             <div className="formgrid">
                                 <label htmlFor="inputEmail">Email: </label>
                                 <input onChange={this.handleFieldChange} type="email"
