@@ -50,7 +50,7 @@ export default class ApplicationViews extends Component {
         />
            <Route exact path="/foods/:foodId(\d+)" render={(props) => { 
              console.log("Props from react-router-dom", props)
-             console.log("This component's props", this.props)
+          console.log("This component's props", this.props)
              return <FoodDetail foodId={parseInt(props.match.params.foodId)} {...props}/>
            }}
            />
