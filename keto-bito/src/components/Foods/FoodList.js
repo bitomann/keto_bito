@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import ApiManager from '../modules/ApiManager';
+import ApiManager from "../modules/ApiManager"
 import FoodCard from './FoodCard';
 // This Module Handles Setting the State of Articles, Rendering Listfoodsrticle Cards to the DOM, and Delete and Edit Functionality for A Single Article
 
@@ -8,23 +8,24 @@ class FoodList extends Component {
     state = {
         foods: [],
     }
+    
     componentDidMount() {
-        //getAll from ArticlesAPIManager, hangs on to that data, and puts it into state
+        //getAll from ApiManager, hangs on to that data, and puts it into state
         ApiManager.getAll("foods")
-            .then((foods) => {
+            .then(foods => {
                 this.setState({
                     foods: foods
                 })
             })
     }
 
-    getAllFoods= () => {
-    ApiManager.getAll("foods")
-    .then((foods) => {
-        this.setState({
-            foods: foods
-        })
-    })}
+    // getAllFoods= () => {
+    // ApiManager.getAll("foods")
+    // .then((foods) => {
+    //     this.setState({
+    //         foods: foods
+    //     })
+    // })}
 
     deleteFood= id => {
         // handles deleting a single food from foods array and renders updated array to the DOM
@@ -40,6 +41,7 @@ class FoodList extends Component {
             }        
     
     render() {
+        console.log("test", this.state)
         return (
             <>
                 <h1>Foods</h1>

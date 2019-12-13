@@ -15,7 +15,7 @@ class FoodCard extends Component {
         .then(this.props.getAllFoods)
     }
 
-    reneder() {
+    render() {
         return (
             <div className="foodCard">
                 <div className="card-content">

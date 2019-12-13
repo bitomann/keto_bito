@@ -4,12 +4,11 @@ import React, { Component } from "react";
 import Home from "./home/Home";
 import Login from "./auth/Login";
 import Registration from "./auth/RegisterAccount";
-// *****************  FORM  ***********************
-// import ArticlesForm from "./articles/ArticlesForm";
-// *****************  LIST  ***********************
-// import ArticlesList from "./articles/ArticlesList";
-// *****************  EDIT  ***********************
-// import ArticlesEditForm from "./articles/ArticlesEditForm";
+// *****************  FOOD  ***********************
+import FoodEditForm from "./Foods/FoodEditForm";
+import FoodForm from "./Foods/FoodForm";
+import FoodList from "./Foods/FoodList";
+// *****************  SHOPPING LIST  ***********************
 
 
 export default class ApplicationViews extends Component {
@@ -37,10 +36,10 @@ export default class ApplicationViews extends Component {
         }}
         />
 
-        {/* FOODS
+        {/* FOODS */}
         <Route
           exact path="/foods" render={props => {
-            return <FoodsList {...props} />
+            return <FoodList {...props} />
 
           }}
         />
