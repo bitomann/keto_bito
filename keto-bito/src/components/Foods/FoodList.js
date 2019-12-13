@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import ApiManager from "../modules/ApiManager"
 import FoodCard from './FoodCard';
-// This Module Handles Setting the State of Articles, Rendering Listfoodsrticle Cards to the DOM, and Delete and Edit Functionality for A Single Article
+// This Module Handles Setting the State of Foods, Rendering  Food Cards to the DOM, and Delete and Edit Functionality for A Single Food
 
 class FoodList extends Component {
     // defines what this component needs to render
@@ -19,26 +19,26 @@ class FoodList extends Component {
             })
     }
 
-    // getAllFoods= () => {
-    // ApiManager.getAll("foods")
-    // .then((foods) => {
-    //     this.setState({
-    //         foods: foods
-    //     })
-    // })}
+    getAllFoods= () => {
+    ApiManager.getAll("foods")
+    .then((foods) => {
+        this.setState({
+            foods: foods
+        })
+    })}
 
-    deleteFood= id => {
-        // handles deleting a single food from foods array and renders updated array to the DOM
-        ApiManager.delete("foods", id)
-            .then(() => {
-                ApiManager.getAll("foods")
-                    .then((updatedFoodList) => {
-                        this.setState({
-                            foods: updatedFoodList
-                        })
-                    })
-                })
-            }        
+    // deleteFood= id => {
+    //     // handles deleting a single food from foods array and renders updated array to the DOM
+    //     ApiManager.delete("foods", id)
+    //         .then(() => {
+    //             ApiManager.getAll("foods")
+    //                 .then((updatedFoodList) => {
+    //                     this.setState({
+    //                         foods: updatedFoodList
+    //                     })
+    //                 })
+    //             })
+    //         }        
     
     render() {
         console.log("test", this.state)
@@ -54,7 +54,6 @@ class FoodList extends Component {
                     </button>
                 </section>
                 <div className="foodList">
-                    {/* array function that maps over articles array and renders a single card for each article */}
                     {this.state.foods.map(food =>
                         <FoodCard
                         key={food.id}

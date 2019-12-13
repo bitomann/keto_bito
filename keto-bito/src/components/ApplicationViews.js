@@ -48,22 +48,17 @@ export default class ApplicationViews extends Component {
           return <FoodForm {...props} />
         }}
         />
+           <Route exact path="/foods/:foodId(\d+)" render={(props) => { 
+             console.log("Props from react-router-dom", props)
+             console.log("This component's props", this.props)
+             return <FoodDetail foodId={parseInt(props.match.params.foodId)} {...props}/>
+           }}
+           />
         <Route
-          path="/foods/:foodId(\d+)/edit" render={props => {
+         exact path="/foods/:foodId(\d+)/edit" render={props => {
             return <FoodEditForm {...props} />
           }}
           />
-        <Route exact path="/foods/:foodId(\d+)" render={(props) => { 
-          return <FoodDetail foodId={parseInt(props.match.params.foodId)} {...props}/>
-        }}
-        />
-        <Route
-          path="/foods" render={props => {
-            return FoodList
-            // Remove null and return the component which will show the user's foods
-          }}
-          />
-        
       </>
     );
   }

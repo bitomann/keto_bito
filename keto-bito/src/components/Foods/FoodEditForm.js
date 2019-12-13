@@ -23,9 +23,10 @@ class FoodEditForm extends Component {
         this.setState({ loadingStatus: true });
         const editedFood = {
             id: this.props.match.params.foodId,
-            name: this.props.foodName,
-            description: this.props.description,
+            name: this.state.foodName,
+            description: this.state.description,
             userId: Number(userId)
+
         };
 
         ApiManager.update("foods", editedFood)
@@ -46,6 +47,9 @@ componentDidMount() {
 
 
 render() {
+    console.log(this.props.match.params.foodId)
+    console.log(this.props)
+    console.log("STATE", this.state)
     return (
         <>
         <form>
