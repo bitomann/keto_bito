@@ -26,13 +26,6 @@ class FoodList extends Component {
             foods: foods
         })
     })}
-
-    // deleteFood = () => {
-    //     //invoke the delete function in FoodList.
-    //     this.setState({loadingStatus: true})
-    //     ApiManager.delete(this.props.foodId)
-    //     .then(() => this.props.history.push("/foods"))
-    // }  
     
     render() {
         console.log("test", this.state)

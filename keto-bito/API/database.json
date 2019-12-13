@@ -25,16 +25,28 @@
       "userId": 1
     },
     {
-      "id": 3,
-      "name": "CHEESE",
-      "description": "Yellow",
-      "userId": 1
-    },
-    {
       "id": 4,
       "name": "Magic Spoon",
       "description": "Breakfast Cereal",
       "userId": 1
+    },
+    {
+      "id": 5,
+      "name": "RIB EYES",
+      "description": "DELICIOUS",
+      "userId": 1
+    },
+    {
+      "foodName": "COW",
+      "description": "MEAT",
+      "userId": 1,
+      "id": 7
+    },
+    {
+      "name": "Cream Cheese",
+      "description": "White",
+      "userId": 1,
+      "id": 8
     }
   ],
   "savedFoods": [
