@@ -27,18 +27,12 @@ class FoodList extends Component {
         })
     })}
 
-    // deleteFood= id => {
-    //     // handles deleting a single food from foods array and renders updated array to the DOM
-    //     ApiManager.delete("foods", id)
-    //         .then(() => {
-    //             ApiManager.getAll("foods")
-    //                 .then((updatedFoodList) => {
-    //                     this.setState({
-    //                         foods: updatedFoodList
-    //                     })
-    //                 })
-    //             })
-    //         }        
+    // deleteFood = () => {
+    //     //invoke the delete function in FoodList.
+    //     this.setState({loadingStatus: true})
+    //     ApiManager.delete(this.props.foodId)
+    //     .then(() => this.props.history.push("/foods"))
+    // }  
     
     render() {
         console.log("test", this.state)
@@ -58,7 +52,7 @@ class FoodList extends Component {
                         <FoodCard
                         key={food.id}
                         food={food}
-                        deleteFood={this.deleteFood}
+                        // deleteFood={this.deleteFood}
                         getAllFoods={this.getAllFoods}
                         {...this.props}
                         />
