@@ -5,6 +5,7 @@ class FoodForm extends Component {
     state = {
         foodName: "",
         description: "",
+        // imageUrl: "",
         loadingStatus: false,
     };
 
@@ -18,13 +19,14 @@ class FoodForm extends Component {
     constructNewFood = evt => {
         const userId = localStorage.getItem("credentials");
         evt.preventDefault();
-        if (this.state.foodName === "" || this.state.description === "") {
+        if (this.state.name === "" || this.state.description === "") {
             window.alert("Please input a food description😃");
         } else {
             this.setState({ loadingStatus: true });
             const food = {
-                name: this.state.foodName,
+                foodName: this.state.name,
                 description: this.state.description,
+                // imageUrl:
                 userId: Number(userId)
             }
             // Create the food and redirect user to food list

@@ -45,13 +45,14 @@ class Login extends Component {
                                 <input onChange={this.handleFieldChange} type="email"
                                     id="email"
                                     placeholder="Email address"
-                                    required="" autoFocus="" />
+                                    required
+                                    autoFocus="" />
 
                                 <label htmlFor="inputPassword">Password: </label>
                                 <input className="inputs" onChange={this.handleFieldChange} type="password"
                                     id="password"
                                     placeholder="Password"
-                                    required="" />
+                                    required />
                             </div>
                             <button type="submit">Sign in</button>
                         </fieldset>

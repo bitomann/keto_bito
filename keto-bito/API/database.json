@@ -19,17 +19,22 @@
       "description": "Über low carb! Muy delicioso!"
     },
     {
-      "name": "Hamburger",
-      "description": "MEat",
-      "userId": 1,
-      "id": 2
+      "id": 2,
+      "name": "MEAT!",
+      "description": "Chicken",
+      "userId": 1
     },
     {
-      "name": "cheese",
-      "description": "yellow",
-      "userId": 1,
       "id": 3,
-      "addToList": false
+      "name": "CHEESE",
+      "description": "Yellow",
+      "userId": 1
+    },
+    {
+      "id": 4,
+      "name": "Magic Spoon",
+      "description": "Breakfast Cereal",
+      "userId": 1
     }
   ],
   "savedFoods": [
