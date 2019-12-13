@@ -8,6 +8,7 @@ import Registration from "./auth/RegisterAccount";
 import FoodEditForm from "./Foods/FoodEditForm";
 import FoodForm from "./Foods/FoodForm";
 import FoodList from "./Foods/FoodList";
+import FoodDetail from "./Foods/FoodDetail";
 // *****************  SHOPPING LIST  ***********************
 
 
@@ -17,7 +18,7 @@ export default class ApplicationViews extends Component {
 
   render() {
     return (
-      <React.Fragment>
+      <>
         {/* Home and Authentication */}
         <Route exact path="/" render={(props) => {
           return <Home {...props} />
@@ -52,55 +53,18 @@ export default class ApplicationViews extends Component {
             return <FoodEditForm {...props} />
           }}
           />
-
+        <Route exact path="/foods/:foodId(\d+)" render={(props) => { 
+          return <FoodDetail foodId={parseInt(props.match.params.foodId)} {...props}/>
+        }}
+        />
         <Route
           path="/foods" render={props => {
-            return null
+            return FoodList
             // Remove null and return the component which will show the user's foods
           }}
-        />
-        {/* SHOPPINGLISTS */}
-        {/* <Route 
-          exact path="/shoppingLists" render={props => {
-            return <ShoppingListsList 
-            {...props} />
-        }}
-        />
-
-        <Route path="/shoppingLists/new" render={props => {
-          return <ShoppingListsForm 
-          {...props} />
-        }}
-        />
-
-        <Route
-          path="/shoppingLists/:shoppingListId(\d+)/edit" render={props => {
-            return <ShoppingListsEditForm 
-            {...props} />
-        }}
-        /> */}
-        {/* SAVED FOODS??? */}
-        {/* <Route
-          exact path="/events" render={props => {
-            if (this.props.user) {
-              return <EventsList
-                {...props}
-                {...this.props}
-              />
-            } else {
-              return <Redirect to="login" />
-            }
-          }}
-        />
-        <Route path="/events/new" render={props => {
-          return <EventForm {...props} />
-        }}
-        />
-        <Route path="/events/:eventId(\d+)/edit" render={props => {
-          return <EventEditForm {...props} />
-        }}
-        /> */}
-      </React.Fragment>
+          />
+        
+      </>
     );
   }
 }

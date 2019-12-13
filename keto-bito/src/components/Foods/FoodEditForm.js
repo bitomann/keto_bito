@@ -5,6 +5,7 @@ class FoodEditForm extends Component {
     state = {
         foodName: "",
         description: "",
+        // imageUrl: "",
         loadingStatus: true,
         // ^something to with edit button 
     };
@@ -30,13 +31,14 @@ class FoodEditForm extends Component {
         ApiManager.update("foods", editedFood)
         .then(() => this.props.history.push("/foods"))
     }
-
+// calls API to get the animal based on the animalId in the URL.
 componentDidMount() {
-    ApiManager.get("foods", this.props.match.params.taskId)
+    ApiManager.get("foods", this.props.match.params.foodId)
     .then(food => {
         this.setState({
             foodName: food.name,
             description: food.description,
+            // imageUrl:,
             loadingStatus: false,
         });
     });
@@ -49,7 +51,7 @@ render() {
         <form>
         <fieldset>
             <div className="formgrid">
-                <label htmlFor="taskName">Food Name</label>
+                <label htmlFor="foodName">Food Name</label>
                 <input type="text" required className="form-control" onChange={this.handleFieldChange}
                 id="foodName" value={this.state.foodName}
                 />
@@ -69,7 +71,7 @@ render() {
                 type="button" disabled={this.state.loadingStatus}
                 onClick={this.updateExistingFood}
                 className="btn btn-primary"
-              >Submit</button>
+              >Update</button>
               </div>
         </fieldset>
         </form>

@@ -23,13 +23,6 @@
       "description": "MEat",
       "userId": 1,
       "id": 2
-    },
-    {
-      "name": "cheese",
-      "description": "yellow",
-      "userId": 1,
-      "id": 3,
-      "addToList": false
     }
   ],
   "savedFoods": [
