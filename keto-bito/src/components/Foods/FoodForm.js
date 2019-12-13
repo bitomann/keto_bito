@@ -24,7 +24,7 @@ class FoodForm extends Component {
         } else {
             this.setState({ loadingStatus: true });
             const food = {
-                foodName: this.state.name,
+                name: this.state.foodName,
                 description: this.state.description,
                 // imageUrl:
                 userId: Number(userId)
