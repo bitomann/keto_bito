@@ -20,10 +20,10 @@ class Ketobito extends Component {
       user: this.isAuthenticated()
     });
   }
-
+  // logs user out//
   clearUser = () =>  {
     localStorage.removeItem("credentials")
-    this.setState({user: this.isAuthenticated()})
+    this.setState({user: this.isAuthenticated()});
   }
 
   componentDidMount(){

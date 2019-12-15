@@ -9,6 +9,11 @@
       "id": 2,
       "email": "mama@rocks.com",
       "password": "456"
+    },
+    {
+      "email": "bitomann@gmail.com",
+      "password": "789",
+      "id": 3
     }
   ],
   "foods": [
@@ -37,10 +42,10 @@
       "userId": 1
     },
     {
-      "foodName": "COW",
+      "id": 7,
+      "name": "GHOSTS",
       "description": "MEAT",
-      "userId": 1,
-      "id": 7
+      "userId": 1
     },
     {
       "name": "Cream Cheese",
@@ -52,15 +57,14 @@
   "savedFoods": [
     {
       "id": 1,
-      "foodID": 1,
+      "foodId": 1,
       "shoppingListId": 1
     }
   ],
   "shoppingLists": [
     {
       "id": 1,
-      "userID": 1,
-      "shoppingListId": 1
+      "userId": 1
     }
   ]
 }

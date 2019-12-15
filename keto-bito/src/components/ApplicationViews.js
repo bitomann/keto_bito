@@ -9,7 +9,9 @@ import FoodEditForm from "./Foods/FoodEditForm";
 import FoodForm from "./Foods/FoodForm";
 import FoodList from "./Foods/FoodList";
 import FoodDetail from "./Foods/FoodDetail";
-// *****************  SHOPPING LIST  ***********************
+// *****************  SHOPPING LIST  **************
+import ShoppingList from "/Users/Bito1/workspace/front-end-capstone/keto-bito/src/components/ShoppingList/ShoppingList.js"
+import "./home/Home.css"
 
 
 export default class ApplicationViews extends Component {
@@ -19,6 +21,8 @@ export default class ApplicationViews extends Component {
   render() {
     return (
       <>
+      <div id="homeBackground" >
+            </div>
         {/* Home and Authentication */}
         <Route exact path="/" render={(props) => {
           return <Home {...props} />
@@ -59,6 +63,14 @@ export default class ApplicationViews extends Component {
             return <FoodEditForm {...props} />
           }}
           />
+
+          {/* SHOPPING LIST */}
+          <Route exact path="/shoppinglist" render={(props) => {
+          return <ShoppingList {...props} />
+          
+          
+        }}
+        />
       </>
     );
   }

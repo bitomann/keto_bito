@@ -55,4 +55,5 @@ class FoodList extends Component {
         )
     }
 }
+
 export default FoodList;

@@ -4,7 +4,6 @@ import ApiManager from "../modules/ApiManager"
 class Registration extends Component {
 
     state = {
-        name: "",
         email: "",
         password: "",
         confirmPassword: ""
@@ -33,7 +32,6 @@ class Registration extends Component {
                 } else {
                     // this.setState({ loadingStatus: true });
                     const user = {
-                        name: this.state.name,
                         email: this.state.email,
                         password: this.state.password
                     };
