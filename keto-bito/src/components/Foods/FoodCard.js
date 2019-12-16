@@ -6,9 +6,10 @@ class FoodCard extends Component {
 
     foodAdded  = evt => {
         const editedFoodId = this.props.food.id
+        console.log("check", editedFoodId)
         evt.preventDefault()
         const editedFood = {
-            // addToList: evt.target.checked,
+            addToList: evt.target.onClick,
             id: editedFoodId
         };
 
@@ -25,8 +26,7 @@ class FoodCard extends Component {
                     {/* <button type="button" onClick={() => this.props.deleteFood}>DELETE</button> */}
                     <button type="button" onClick={() => { this.props.history.push(`/foods/${this.props.food.id}/edit`)}}> EDIT</button>
                     <Link to={`/foods/${this.props.food.id}`}><button>Details</button></Link>
-                    <label htmlFor="addFoodToList">ADD TO SHOPPING LIST</label>
-                    <input type="checkbox" name="addFoodToList" checked={this.props.food.added} onChange={this.foodAdded}/>
+                    <button type="button">ADD TO SHOPPING LIST</button>
                     <hr />
                 </div>    
             </div>

@@ -21,19 +21,22 @@
       "id": 1,
       "userId": 1,
       "name": "Keto ICE CREAM!",
-      "description": "Über low carb! Muy delicioso!"
+      "description": "Über low carb! Muy delicioso!",
+      "addToList": false
     },
     {
       "id": 2,
       "name": "MEAT!",
       "description": "Chicken",
-      "userId": 1
+      "userId": 1,
+      "addToList": true
     },
     {
       "id": 4,
       "name": "Magic Spoon",
       "description": "Breakfast Cereal",
-      "userId": 1
+      "userId": 1,
+      "addToList": true
     },
     {
       "id": 5,
@@ -58,6 +61,21 @@
     {
       "id": 1,
       "foodId": 1,
+      "shoppingListId": 1
+    },
+    {
+      "id": 2,
+      "foodId": 2,
+      "shoppingListId": 1
+    },
+    {
+      "id": 4,
+      "foodId": 4,
+      "shoppingListId": 1
+    },
+    {
+      "id": 5,
+      "foodId": 5,
       "shoppingListId": 1
     }
   ],

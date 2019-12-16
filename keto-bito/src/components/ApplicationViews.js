@@ -65,7 +65,7 @@ export default class ApplicationViews extends Component {
           />
 
           {/* SHOPPING LIST */}
-          <Route exact path="/shoppinglist" render={(props) => {
+          <Route path="/shoppinglist" render={props => {
           return <ShoppingList {...props} />
           
           
