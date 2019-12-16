@@ -9,6 +9,9 @@ class Home extends Component {
             <div id="homeBackground" >
             </div>
             <div>
+                <br></br>
+                <br></br>
+                <br></br>
                 <h1 id="welcomeHomePageHeader">A GUIDE TO EATING THE FOODS YOU LIKE</h1>
 
             </div>

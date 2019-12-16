@@ -1,5 +1,7 @@
 import React, { Component } from 'react'
 import ApiManager from '../modules/ApiManager'
+import FoodCard from '../Foods/FoodCard'
+// import FoodCard from '../Foods/FoodCard'
 
 
 class ShoppingList extends Component {
@@ -9,49 +11,31 @@ class ShoppingList extends Component {
     }
 
     componentDidMount() {
-        //getAll from ApiManager, hangs on to that data, and puts it into state
-        ApiManager.getAll("foods")
-            .then(foods => {
-                this.setState({
-                    foods: foods
-                })
+        ApiManager.getAll("savedFoods?_expand=food&_expand=shoppingList")
+        .then(savedFoods => {
+            this.setState({
+                savedFoods: savedFoods
             })
-    }
-
-    getAllFoods= () => {
-    ApiManager.getAll("foods")
-    .then((foods) => {
-        this.setState({
-            foods: foods
         })
-    })}
+    }
+   
+   
     
     render() {
-        console.log("test", this.state)
+        console.log("LIST RENDER", this.state)
         return (
-            <>
-                <h1>SHOPPING LIST</h1>
-                <section>
-                    <button type="button"
-                        className="newFoodButton"
-                        // onClick renders articleForm.js 
-                        onClick={() => { this.props.history.push("/foods/new") }}>
-                        New Food
-                    </button>
-                </section>
-                <div className="shoppingList">
-                    {this.state.foods.map(list =>
-                        <ShoppingList
-                        // key={}
-                        // food={}
-                        getAllFoods={this.getAllFoods}
-                        {...this.props}
-                        />
-                    )}
-                </div>
+            <>                
+            <h1>SHOPPING LIST</h1>
+            <div className="shoppingList">
+                <ul> {this.state.savedFoods.map(savedFoods => 
+                   <li key={savedFoods.id}>
+                    {savedFoods.food.name}
+                   </li>
+                 )} </ul>
+            </div>
             </>
-        )
-    }
+            )
+        }
 }
 
 export default ShoppingList
