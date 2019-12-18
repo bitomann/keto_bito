@@ -135,5 +135,3 @@ export function unregister() {
     });
   }
 }
-
-export default serviceWorker

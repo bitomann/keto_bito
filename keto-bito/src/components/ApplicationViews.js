@@ -10,8 +10,8 @@ import FoodForm from "./Foods/FoodForm";
 import FoodList from "./Foods/FoodList";
 import FoodDetail from "./Foods/FoodDetail";
 // *****************  SHOPPING LIST  **************
-import ShoppingList from "/Users/Bito1/workspace/front-end-capstone/keto-bito/src/components/ShoppingList/ShoppingList.js"
 import "./home/Home.css"
+import ShoppingList from "../components/ShoppingList/ShoppingList";
 
 
 export default class ApplicationViews extends Component {
