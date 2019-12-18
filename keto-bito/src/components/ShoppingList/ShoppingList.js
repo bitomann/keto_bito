@@ -1,8 +1,5 @@
 import React, { Component } from 'react'
 import ApiManager from '../modules/ApiManager'
-import FoodCard from '../Foods/FoodCard'
-// import FoodCard from '../Foods/FoodCard'
-
 
 class ShoppingList extends Component {
 
@@ -19,7 +16,12 @@ class ShoppingList extends Component {
         })
     }
    
-   
+    handleDelete = () => {
+        //invoke the delete function in APIManger and re-direct to the animal list.
+        this.setState({loadingStatus: true})
+        ApiManager.delete("savedFoods", this.props.savedFoodId)
+        .then(() => this.props.history.push("/shoppinglist"))
+    }
     
     render() {
         console.log("LIST RENDER", this.state)
@@ -29,6 +31,7 @@ class ShoppingList extends Component {
             <div className="shoppingList">
                 <ul> {this.state.savedFoods.map(savedFoods => 
                    <li key={savedFoods.id}>
+                   <button type="button" disabled={this.state.loadingStatus} onClick={this.handleDelete}>Remove</button>
                     {savedFoods.food.name}
                    </li>
                  )} </ul>

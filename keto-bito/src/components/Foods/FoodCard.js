@@ -17,6 +17,16 @@ class FoodCard extends Component {
         .then(this.props.getAllFoods)
     }
 
+    savedFood = evt => {
+        const shoppingListId = this.props.savedFoods.foodId
+        evt.preventDefault()
+        const favorite = {
+            addShoppingToList: evt.target.onClick,
+            id: shoppingListId
+        }
+        console.log("check", shoppingListId)
+    }
+
     render() {
         return (
             <div className="foodCard">
@@ -26,7 +36,7 @@ class FoodCard extends Component {
                     {/* <button type="button" onClick={() => this.props.deleteFood}>DELETE</button> */}
                     <button type="button" onClick={() => { this.props.history.push(`/foods/${this.props.food.id}/edit`)}}> EDIT</button>
                     <Link to={`/foods/${this.props.food.id}`}><button>Details</button></Link>
-                    <button type="button">ADD TO SHOPPING LIST</button>
+                    <button type="button"onClick={this.savedFood}>ADD TO SHOPPING LIST</button>
                     <hr />
                 </div>    
             </div>
