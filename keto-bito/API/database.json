@@ -14,15 +14,19 @@
       "email": "bitomann@gmail.com",
       "password": "789",
       "id": 3
+    },
+    {
+      "email": "me@me.com",
+      "password": "asd",
+      "id": 4
     }
   ],
   "foods": [
     {
       "id": 1,
-      "userId": 1,
-      "name": "Keto ICE CREAM!",
+      "name": "KETO ICE CREAM!",
       "description": "Über low carb! Muy delicioso!",
-      "addToList": false
+      "userId": 1
     },
     {
       "id": 2,

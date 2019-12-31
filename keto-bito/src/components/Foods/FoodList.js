@@ -31,7 +31,7 @@ class FoodList extends Component {
         console.log("test", this.state)
         return (
             <>
-                <h1>Foods</h1>
+                <h1>Food Ideas</h1>
                 <section>
                     <button type="button"
                         className="newFoodButton"
