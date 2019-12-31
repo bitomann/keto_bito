@@ -1,7 +1,8 @@
 import React, { Component } from "react"
 import ApiManager from "../modules/ApiManager"
+// import ShoppingList from "../ShoppingList/ShoppingList"
 
-class Registration extends Component {
+class RegisterAccount extends Component {
 
     state = {
         email: "",
@@ -30,26 +31,39 @@ class Registration extends Component {
                 } else if (!(/^\w+([.-]?\w+)*@\w+([.-]?\w+)*(\.\w{2,3})+$/.test(this.state.email))) {
                     alert("Please enter a valid email address")
                 } else {
-                    // this.setState({ loadingStatus: true });
+                    this.setState({ loadingStatus: true });
                     const user = {
                         email: this.state.email,
                         password: this.state.password
                     };
 
-                    // Create the user and redirect user to news
+                    // Create the user and redirect user to shopping List
                     ApiManager.createNewUser(user)
                         .then(results => {
                             localStorage.setItem("credentials", results.id)
+                        })
+                        .then(ShoppingList => {
+                            localStorage.getItem("shoppingList", ShoppingList)
+                            console.log("CREATLIST", ShoppingList)
                         });
-                }
-                    this.props.history.push("/events")
-            })
-    }
+                this.props.history.push("/shoppinglist")
+                 }}
 
-
-    render() {
-        return (
-            <>
+    // createUserShoppingList = e => {
+    //     e.preventDefault();
+    //     this.setState({ loadingStatus: true });
+    //     const shoppingList = {
+    //         foodId: [],
+    //         shoppingListId: []};
+    //         ApiManager.post()
+            
+    //         )
+            )}
+            
+            
+            render() {
+            return (
+                <>
                 <form>
                     <fieldset>
                         <h3>Register</h3>
@@ -81,7 +95,7 @@ class Registration extends Component {
             </>
         )
     }
+    }
 
-}
 
-export default Registration;
+export default RegisterAccount;

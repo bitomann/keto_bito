@@ -1,25 +1,36 @@
 import React, { Component } from 'react'
 import ApiManager from '../modules/ApiManager'
+import FoodCard from '../Foods/FoodCard'
+import RegisterAccount from '../auth/RegisterAccount'
+
 
 class ShoppingList extends Component {
 
     state = {
         savedFoods: [],
+        // shoppingLists: [],
     }
 
     componentDidMount() {
         ApiManager.getAll("savedFoods?_expand=food&_expand=shoppingList")
         .then(savedFoods => {
             this.setState({
-                savedFoods: savedFoods
+                savedFoods: savedFoods,
             })
         })
+        // .then(shoppingLists => {
+        //     this.setState({
+        //         shoppingLists: shoppingLists,
+        //     })
+        // })
     }
+
+    
    
     handleDelete = () => {
         //invoke the delete function in APIManger and re-direct to the animal list.
         this.setState({loadingStatus: true})
-        ApiManager.delete("savedFoods", this.props.savedFoodId)
+        ApiManager.delete("savedFoods", this.props.foodId)
         .then(() => this.props.history.push("/shoppinglist"))
     }
     
@@ -31,7 +42,8 @@ class ShoppingList extends Component {
             <div className="shoppingList">
                 <ul> {this.state.savedFoods.map(savedFoods => 
                    <li key={savedFoods.id}>
-                   <button type="button" disabled={this.state.loadingStatus} onClick={this.handleDelete}>Remove</button>
+                   <button type="button" disabled={this.state.loadingStatus} onClick={
+                       this.handleDelete}>Remove</button>
                     {savedFoods.food.name}
                    </li>
                  )} </ul>
