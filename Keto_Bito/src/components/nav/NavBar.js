@@ -11,7 +11,7 @@ class NavBar extends Component {
             <nav className="navbar bg-dark text-white flex-md-nowrap p-0 shadow">
                 <ul className="nav nav-pills nav-fill">
                     <li className="nav-">
-                        <Link className="nav-link-home" id="logo" style={{ textDecoration: 'none' }} to="/"><img src={ require('/Users/Bito1/workspace/front-end-capstone/keto-bito/src/components/nav/1575840946148.png') } /></Link>
+                        <Link className="nav-link-home" id="logo" style={{ textDecoration: 'none' }} to="/"><img src={ require('/Users/Bito1/workspace/front-end-capstone/Keto_Bito/src/components/nav/1575840946148.png') } /></Link>
                     </li>
                     <li className="nav-item">
                         <Link className="nav-link" id="keto-bito" style={{ textDecoration: 'none' }} to="/">Keto-Bito</Link>
