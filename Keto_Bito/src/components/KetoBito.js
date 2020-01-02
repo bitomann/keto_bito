@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import './Ketobito.css'
+import './KetoBito.css'
 import ApplicationViews from "./ApplicationViews";
 import NavBar from "./nav/NavBar";
 // import ApiManager from "./modules/ApiManager";

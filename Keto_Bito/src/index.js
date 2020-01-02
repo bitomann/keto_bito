@@ -3,11 +3,11 @@ import ReactDOM from 'react-dom';
 import './index.css';
 import * as serviceWorker from './serviceWorker';
 import { BrowserRouter as Router } from "react-router-dom"
-import Ketobito from './components/ketobito';
+import KetoBito from './components/KetoBito';
 
 ReactDOM.render(
     <Router>
-        <Ketobito />
+        <KetoBito />
     </Router>
     , document.getElementById('root'));
 
