@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import ApiManager from '../modules/ApiManager'
-import FoodCard from '../Foods/FoodCard'
-import RegisterAccount from '../auth/RegisterAccount'
+// import FoodCard from '../Foods/FoodCard'
+// import RegisterAccount from '../auth/RegisterAccount'
 
 
 class ShoppingList extends Component {

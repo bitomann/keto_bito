@@ -84,5 +84,14 @@ export default {
     checkUser(email, password) {
         return fetch(`${remoteURL}/users?email=${email}&password=${password}`)
             .then(response => response.json())
+    },
+    createShoppingList(userId) {
+        return fetch(`${remoteURL}/shoppingLists`, {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json",
+            },
+            body: JSON.stringify(userId)
+        }).then(results => results.json())
     }
 }
