@@ -7,7 +7,8 @@ class RegisterAccount extends Component {
     state = {
         email: "",
         password: "",
-        confirmPassword: ""
+        confirmPassword: "",
+        userId: ""
     }
 
     // Update state whenever an input field is edited
@@ -18,7 +19,7 @@ class RegisterAccount extends Component {
     }
 
     // Save new user to database
-    createNewUser = e => {
+    constructNewUser = e => {
         e.preventDefault();
         ApiManager.getUserData()
             .then(users => {
@@ -36,30 +37,27 @@ class RegisterAccount extends Component {
                         email: this.state.email,
                         password: this.state.password
                     };
-
                     // Create the user and redirect user to shopping List
                     ApiManager.createNewUser(user)
-                        .then(results => {
-                            localStorage.setItem("credentials", results.id)
-                        })
-                        .then(ShoppingList => {
-                            localStorage.getItem("shoppingList", ShoppingList)
-                            console.log("CREATLIST", ShoppingList)
+                    .then(results => {
+                        localStorage.setItem("credentials", results.id)
+                        return results
+                    })
+                    .then(results => {
+                        const shoppingList = {
+                            userId: results.id
+                        };
+                        ApiManager.createShoppingList(shoppingList)
+                            console.log("RESULTS", results)
+                            localStorage.setItem("shoppingLists", results)
                         });
-                this.props.history.push("/shoppinglist")
+                this.props.history.push("/shoppingList")
                  }}
 
-    // createUserShoppingList = e => {
-    //     e.preventDefault();
-    //     this.setState({ loadingStatus: true });
-    //     const shoppingList = {
-    //         foodId: [],
-    //         shoppingListId: []};
-    //         ApiManager.post()
-            
-    //         )
-            )}
-            
+                 
+                 )
+                 }
+                 
             
             render() {
             return (
@@ -87,7 +85,7 @@ class RegisterAccount extends Component {
                                 required="" />
 
                         </div>
-                        <button onClick={this.createNewUser} type="submit">
+                        <button onClick={this.constructNewUser} type="submit">
                             Register
                         </button>
                     </fieldset>

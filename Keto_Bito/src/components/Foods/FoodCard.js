@@ -37,13 +37,13 @@ class FoodCard extends Component {
         return (
             <div className="foodCard">
                 <div className="card-content">
-                    {/* <h1>{this.props.food.name}</h1> */}
-                    <Link className="nav-link" id="keto-bito" style={{ textDecoration: 'none' }} to="/foods">{this.props.food.name}</Link>
-                    <p>{this.props.food.description}</p>
+                    <h1>{this.props.food.name}</h1>
+                    {/* <Link className="nav-link" id="keto-bito" style={{ textDecoration: 'none' }} to="/foods">{this.props.food.name}</Link> */}
+                    {/* <p>{this.props.food.description}</p> */}
                     <button type="button" onClick={() => this.props.deleteFood}>DELETE</button>
                     <button type="button" onClick={() => { this.props.history.push(`/foods/${this.props.food.id}/edit`)}}> EDIT</button>
                     <Link to={`/foods/${this.props.food.id}`}><button>Details</button></Link>
-                    <button type="button" name="savedFood" onClick={this.state}>ADD TO SHOPPING LIST</button>
+                    <button type="button" name="savedFood" onClick={() => this.state.userId}>ADD TO SHOPPING LIST</button>
                     <hr />
                 </div>    
             </div>
