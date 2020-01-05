@@ -27,11 +27,16 @@ class ShoppingList extends Component {
 
     
    
-    handleDelete = () => {
+    handleDelete = (savedFoodId) => {
         //invoke the delete function in APIManger and re-direct to the animal list.
-        this.setState({loadingStatus: true})
-        ApiManager.delete("savedFoods", this.props.foodId)
-        .then(() => this.props.history.push("/shoppinglist"))
+        // this.setState({loadingStatus: true})
+        ApiManager.delete("savedFoods", savedFoodId)
+        .then(() => ApiManager.getAll("savedFoods?_expand=food&_expand=shoppingList")
+        .then(savedFoods => {
+            this.setState({
+                savedFoods: savedFoods,
+            })
+        }))
     }
     
     render() {
@@ -43,7 +48,7 @@ class ShoppingList extends Component {
                 <ul> {this.state.savedFoods.map(savedFoods => 
                    <li key={savedFoods.id}>
                    <button type="button" disabled={this.state.loadingStatus} onClick={
-                       this.handleDelete}>Remove</button>
+                       () => this.handleDelete(savedFoods.id)}>Remove</button>
                     {savedFoods.food.name}
                    </li>
                  )} </ul>

@@ -71,73 +71,7 @@
       "id": 9
     }
   ],
-  "savedFoods": [
-    {
-      "shoppingListId": 30,
-      "foodId": 1,
-      "id": 6
-    },
-    {
-      "shoppingListId": 30,
-      "foodId": 9,
-      "id": 7
-    },
-    {
-      "shoppingListId": 30,
-      "foodId": 2,
-      "id": 8
-    },
-    {
-      "shoppingListId": 30,
-      "foodId": 1,
-      "id": 9
-    },
-    {
-      "shoppingListId": 30,
-      "foodId": 1,
-      "id": 10
-    },
-    {
-      "shoppingListId": 30,
-      "foodId": 8,
-      "id": 11
-    },
-    {
-      "shoppingListId": 30,
-      "foodId": 9,
-      "id": 12
-    },
-    {
-      "shoppingListId": 30,
-      "foodId": 9,
-      "id": 13
-    },
-    {
-      "shoppingListId": 30,
-      "foodId": 8,
-      "id": 14
-    },
-    {
-      "shoppingListId": 30,
-      "foodId": 8,
-      "id": 15
-    },
-    {
-      "shoppingListId": 30,
-      "foodId": 8,
-      "id": 16
-    },
-    {
-      "shoppingListId": 30,
-      "foodId": 8,
-      "id": 17
-    },
-    {
-      "shoppingListId": 30,
-      "foodId": 4,
-      "id": 18
-    }
-  ],
+  "savedFoods": [],
   "shoppingLists": [
     {
       "userId": 2,
