@@ -13,25 +13,35 @@ class FoodCard extends Component {
         //             userId: userId
         //         })
         //     })
-            // .then
-        ApiManager.getAllforLoggedInUser("userId", "shoppingList")
+        //     .then
+        ApiManager.getAllforLoggedInUser("userId", "shoppingLists")
             .then(shoppingList => {
                 this.setState({
                     shoppingList: shoppingList
                 })
             })
     }
-
-
+    
+    
     savedFood = evt => {
-        const shoppingListId = this.props.savedFoods
+        const shoppingListId = localStorage.getItem("shoppingLists");
         evt.preventDefault()
         const favoriteFoodId = {
             addShoppingList: evt.target.onClick,
             id: ShoppingList
         }
-        console.log("SAVE TO LIST", shoppingListId, favoriteFoodId)
     }
+    // console.log("SAVE TO LIST", shoppingListId, favoriteFoodId)
+    
+    addFoodToShoppingList = evt => {
+        
+    const newListItem = {
+        shoppingListId: Number (localStorage.getItem("shoppingLists")),
+        foodId: this.props.food.id
+        
+    }
+    ApiManager.post("savedFoods", newListItem)
+        console.log(newListItem) }
 
     render() {
         return (
@@ -42,9 +52,13 @@ class FoodCard extends Component {
                     {/* <p>{this.props.food.description}</p> */}
                     <button type="button" onClick={() => this.props.deleteFood}>DELETE</button>
                     <button type="button" onClick={() => { this.props.history.push(`/foods/${this.props.food.id}/edit`)}}> EDIT</button>
-                    <Link to={`/foods/${this.props.food.id}`}><button>Details</button></Link>
-                    <button type="button" name="savedFood" onClick={() => this.state.userId}>ADD TO SHOPPING LIST</button>
+                    <Link to={`/foods/${this.props.food.id}`}><button>Details</button>
+                    </Link>
+                    <button type="button" name="savedFood" onClick={
+                       this.addFoodToShoppingList}
+                    >ADD TO SHOPPING LIST</button>
                     <hr />
+            
                 </div>    
             </div>
         );
