@@ -21,10 +21,16 @@ class Ketobito extends Component {
     });
   }
   // logs user out//
-  clearUser = () =>  {
-    localStorage.removeItem("credentials")
-    this.setState({user: this.isAuthenticated()});
-  }
+  // 
+  
+  clearUser = () => {
+    localStorage.clear()
+    this.setState({
+        user: this.isAuthenticated()
+    });
+
+}
+
 
   componentDidMount(){
     this.setState({
@@ -35,7 +41,9 @@ class Ketobito extends Component {
   render() {
     return (
       <>
-        <NavBar />
+        <NavBar
+                          user={this.state.user} 
+                          clearUser={this.clearUser} />
         <ApplicationViews user={this.state.user}
                           setUser={this.setUser} 
                           handleLogin={this.handleLogin}/>

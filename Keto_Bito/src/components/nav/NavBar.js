@@ -1,10 +1,15 @@
 import React, { Component } from "react"
-import { Link } from "react-router-dom"
+import { Link, withRouter } from "react-router-dom"
 import './NavBar.css'
 // import "bootstrap/dist/css/bootstrap.min.css"
 
 
 class NavBar extends Component {
+
+    handleLogout = () => {
+        this.props.clearUser();
+        this.props.history.push('/');
+    }
 
     render() {
         return (
@@ -27,11 +32,11 @@ class NavBar extends Component {
                     <li className="nav-item">
                         <Link className="nav-link" style={{ textDecoration: 'none' }} to="/login">LOGIN</Link>
                     </li>
-                    <li><span className="nav-link" onClick={this.handleLogout}>Logout</span></li>
+                    <li><Link className="nav-link" onClick={this.handleLogout}>Logout</Link></li>
                     </ul>
             </nav>
         )
     }
 }
 
-export default NavBar
+export default withRouter(NavBar);
