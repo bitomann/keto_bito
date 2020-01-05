@@ -71,7 +71,23 @@
       "id": 9
     }
   ],
-  "savedFoods": [],
+  "savedFoods": [
+    {
+      "shoppingListId": 0,
+      "foodId": 2,
+      "id": 1
+    },
+    {
+      "shoppingListId": 0,
+      "foodId": 1,
+      "id": 2
+    },
+    {
+      "shoppingListId": 0,
+      "foodId": 4,
+      "id": 3
+    }
+  ],
   "shoppingLists": [
     {
       "userId": 2,
