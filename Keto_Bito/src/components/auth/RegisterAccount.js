@@ -48,8 +48,12 @@ class RegisterAccount extends Component {
                             userId: results.id
                         };
                         ApiManager.createShoppingList(shoppingList)
+                       .then(results =>
+                        {
                             console.log("RESULTS", results)
-                            localStorage.setItem("shoppingLists", results)
+                            localStorage.setItem("shoppingLists", results.id)
+
+                        } ) 
                         });
                 this.props.history.push("/shoppingList")
                  }}

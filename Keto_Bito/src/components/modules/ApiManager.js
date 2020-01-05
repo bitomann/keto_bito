@@ -93,5 +93,6 @@ export default {
             },
             body: JSON.stringify(userId)
         }).then(results => results.json())
-    }
+    },
+    
 }

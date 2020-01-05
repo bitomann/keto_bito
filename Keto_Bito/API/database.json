@@ -14,6 +14,21 @@
       "email": "me@me.com",
       "password": "123",
       "id": 3
+    },
+    {
+      "email": "ff@gg.com",
+      "password": "1",
+      "id": 4
+    },
+    {
+      "email": "y@k.com",
+      "password": "11",
+      "id": 5
+    },
+    {
+      "email": "m@v.com",
+      "password": "1",
+      "id": 6
     }
   ],
   "foods": [
@@ -48,35 +63,82 @@
       "description": "White",
       "userId": 1,
       "id": 8
+    },
+    {
+      "name": "test",
+      "description": "test",
+      "userId": 4,
+      "id": 9
     }
   ],
   "savedFoods": [
     {
-      "id": 1,
+      "shoppingListId": 30,
       "foodId": 1,
-      "shoppingListId": 1
+      "id": 6
     },
     {
-      "id": 2,
+      "shoppingListId": 30,
+      "foodId": 9,
+      "id": 7
+    },
+    {
+      "shoppingListId": 30,
       "foodId": 2,
-      "shoppingListId": 1
+      "id": 8
     },
     {
-      "id": 4,
+      "shoppingListId": 30,
+      "foodId": 1,
+      "id": 9
+    },
+    {
+      "shoppingListId": 30,
+      "foodId": 1,
+      "id": 10
+    },
+    {
+      "shoppingListId": 30,
+      "foodId": 8,
+      "id": 11
+    },
+    {
+      "shoppingListId": 30,
+      "foodId": 9,
+      "id": 12
+    },
+    {
+      "shoppingListId": 30,
+      "foodId": 9,
+      "id": 13
+    },
+    {
+      "shoppingListId": 30,
+      "foodId": 8,
+      "id": 14
+    },
+    {
+      "shoppingListId": 30,
+      "foodId": 8,
+      "id": 15
+    },
+    {
+      "shoppingListId": 30,
+      "foodId": 8,
+      "id": 16
+    },
+    {
+      "shoppingListId": 30,
+      "foodId": 8,
+      "id": 17
+    },
+    {
+      "shoppingListId": 30,
       "foodId": 4,
-      "shoppingListId": 1
-    },
-    {
-      "id": 5,
-      "foodId": 5,
-      "shoppingListId": 1
+      "id": 18
     }
   ],
   "shoppingLists": [
-    {
-      "userId": 14,
-      "id": 25
-    },
     {
       "userId": 2,
       "id": 26
@@ -84,6 +146,18 @@
     {
       "userId": 3,
       "id": 27
+    },
+    {
+      "userId": 4,
+      "id": 28
+    },
+    {
+      "userId": 5,
+      "id": 29
+    },
+    {
+      "userId": 6,
+      "id": 30
     }
   ]
 }
