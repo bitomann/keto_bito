@@ -6,15 +6,19 @@ class FoodDetail extends Component {
   state = {
       foodName: "",
       description: "",
+      userId: ""
   }
- 
+
+  LoggedInUserId = localStorage.getItem("credentials")
+
     componentDidMount(){
       //get(id) from ApiManager and hang on to the data; put it into state
       ApiManager.get("foods", this.props.foodId)
       .then((food) => {
         this.setState({
           foodName: food.name,
-          description: food.description
+          description: food.description,
+          userId: food.userId
         });
       });
     }
@@ -35,7 +39,9 @@ class FoodDetail extends Component {
         <div className="card-content">
             <h3>Name: <span style={{ color: 'darkslategrey' }}>{this.state.foodName}</span></h3>
             <p>Description: {this.state.description}</p>
-            <button type="button" onClick={this.handleDelete}>DELETE</button>
+            {
+            Number(this.LoggedInUserId)===this.state.userId
+            ?<button type="button" onClick={this.handleDelete}>DELETE</button>:null}
         </div>
       </div>
     );
