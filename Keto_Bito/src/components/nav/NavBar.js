@@ -23,16 +23,18 @@ class NavBar extends Component {
                     </li>
                     <li className="nav-item">
                     </li>
+                    {this.props.user===true?<>
                     <li className="nav-item">
                         <Link className="nav-link" style={{ textDecoration: 'none' }} to="/foods">FOODS</Link>
                     </li>
                     <li className="nav-item">
                         <Link className="nav-link" style={{ textDecoration: 'none' }} to="/shoppinglist">SHOPPING LIST</Link>
                     </li>
+                    <li><Link className="nav-link" onClick={this.handleLogout}>Logout</Link></li>
+                    </>:
                     <li className="nav-item">
                         <Link className="nav-link" style={{ textDecoration: 'none' }} to="/login">LOGIN</Link>
-                    </li>
-                    <li><Link className="nav-link" onClick={this.handleLogout}>Logout</Link></li>
+                    </li>}
                     </ul>
             </nav>
         )

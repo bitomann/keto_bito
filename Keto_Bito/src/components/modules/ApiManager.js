@@ -25,7 +25,7 @@ export default {
         return fetch(`${remoteURL}/${tableName}/${id}`, {
             method: "DELETE"
         })
-            .then(result => result.json())
+            // .then(result => result.json())
     },
     // This fetch call posts a new object to tableName.  
     post(tableName, newFood) {
@@ -94,5 +94,13 @@ export default {
             body: JSON.stringify(userId)
         }).then(results => results.json())
     },
+    getLoggedInUserShoppingList(userId) {
+        return fetch(`${remoteURL}/shoppingLists?userId=${userId}`, {
+        }).then(results => results.json())
+    },
+    getLoggedInUserSavedFoodsList(shoppingListId){
+        return fetch (`${remoteURL}/savedFoods?_expand=food&_expand=shoppingList&shoppingListId=${shoppingListId}`)
+        .then(results => results.json())
+    }
     
 }
