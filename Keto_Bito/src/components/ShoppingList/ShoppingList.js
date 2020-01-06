@@ -1,7 +1,6 @@
 import React, { Component } from 'react'
 import ApiManager from '../modules/ApiManager'
-// import FoodCard from '../Foods/FoodCard'
-// import RegisterAccount from '../auth/RegisterAccount'
+import '../ShoppingList/ShoppingList.css'
 
 
 class ShoppingList extends Component {
@@ -10,29 +9,34 @@ class ShoppingList extends Component {
         savedFoods: [],
         // shoppingLists: [],
     }
-
+    shoppingListId = localStorage.getItem("shoppingLists")
     componentDidMount() {
-        ApiManager.getAll("savedFoods?_expand=food&_expand=shoppingList")
+        ApiManager.getLoggedInUserSavedFoodsList(this.shoppingListId)
         .then(savedFoods => {
+            console.log("CHECK", savedFoods)
             this.setState({
                 savedFoods: savedFoods,
             })
         })
-        // .then(shoppingLists => {
-        //     this.setState({
-        //         shoppingLists: shoppingLists,
-        //     })
-        // })
+        // ApiManager.getLoggedInUserShoppingList(this.userId)
+        //  .then(results =>
+        // {
+        //     console.log("RESULTS", results)
+        //     localStorage.setItem("shoppingLists", results.id)
+
+        // } )
     }
 
     
    
     handleDelete = (savedFoodId) => {
+        console.log("DELETE", savedFoodId)
         //invoke the delete function in APIManger and re-direct to the animal list.
         // this.setState({loadingStatus: true})
         ApiManager.delete("savedFoods", savedFoodId)
-        .then(() => ApiManager.getAll("savedFoods?_expand=food&_expand=shoppingList")
+        .then(() => ApiManager.getLoggedInUserSavedFoodsList(this.shoppingListId)
         .then(savedFoods => {
+            console.log("CHECK", savedFoods)
             this.setState({
                 savedFoods: savedFoods,
             })

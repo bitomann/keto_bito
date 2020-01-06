@@ -43,15 +43,31 @@ class FoodCard extends Component {
     ApiManager.post("savedFoods", newListItem)
         console.log(newListItem) }
 
+        // handleDelete = () => {   
+        //     console.log("I clicked delete")
+        //       //invoke the delete function in Food.
+        //       this.setState({loadingStatus: true})
+        //       ApiManager.delete("foods", this.props.foodId)
+        //       .then(() => this.props.history.push("/foods"))
+        //   }
+
     render() {
+        console.log("FISH", this.props.food.userId)
+        console.log("SCALEY", this.props.loggedUser)
         return (
             <div className="foodCard">
                 <div className="card-content">
                     <h1>{this.props.food.name}</h1>
                     {/* <Link className="nav-link" id="keto-bito" style={{ textDecoration: 'none' }} to="/foods">{this.props.food.name}</Link> */}
                     {/* <p>{this.props.food.description}</p> */}
-                    <button type="button" onClick={() => this.props.deleteFood}>DELETE</button>
+                    {/* <button type="button" onClick={this.handleDelete}>DELETE</button> */}
+                    {
+                    this.props.food.userId===this.props.loggedUser
+                    ?
                     <button type="button" onClick={() => { this.props.history.push(`/foods/${this.props.food.id}/edit`)}}> EDIT</button>
+                    :
+                    null
+                    }
                     <Link to={`/foods/${this.props.food.id}`}><button>Details</button>
                     </Link>
                     <button type="button" name="savedFood" onClick={

@@ -8,7 +8,7 @@ class FoodList extends Component {
     state = {
         foods: [],
     }
-    
+    userId = localStorage.getItem("credentials")
     componentDidMount() {
         //getAll from ApiManager, hangs on to that data, and puts it into state
         ApiManager.getAll("foods")
@@ -45,6 +45,7 @@ class FoodList extends Component {
                         <FoodCard
                         key={food.id}
                         food={food}
+                        loggedUser={Number(this.userId)}
                         // deleteFood={this.deleteFood}
                         getAllFoods={this.getAllFoods}
                         {...this.props}

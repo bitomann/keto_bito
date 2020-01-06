@@ -11,24 +11,19 @@
       "id": 2
     },
     {
-      "email": "me@me.com",
-      "password": "123",
+      "email": "tt@rt.com",
+      "password": "1",
       "id": 3
     },
     {
-      "email": "ff@gg.com",
+      "email": "a@a.com",
       "password": "1",
       "id": 4
     },
     {
-      "email": "y@k.com",
-      "password": "11",
+      "email": "b@b.com",
+      "password": "123",
       "id": 5
-    },
-    {
-      "email": "m@v.com",
-      "password": "1",
-      "id": 6
     }
   ],
   "foods": [
@@ -46,13 +41,6 @@
       "addToList": true
     },
     {
-      "id": 4,
-      "name": "Magic Spoon",
-      "description": "Breakfast Cereal",
-      "userId": 1,
-      "addToList": true
-    },
-    {
       "id": 5,
       "name": "RIB EYES",
       "description": "DELICIOUS",
@@ -63,29 +51,48 @@
       "description": "White",
       "userId": 1,
       "id": 8
-    },
-    {
-      "name": "test",
-      "description": "test",
-      "userId": 4,
-      "id": 9
     }
   ],
   "savedFoods": [
     {
-      "shoppingListId": 0,
-      "foodId": 2,
+      "shoppingListId": 33,
+      "foodId": 1,
       "id": 1
     },
     {
-      "shoppingListId": 0,
-      "foodId": 1,
+      "shoppingListId": 33,
+      "foodId": 2,
       "id": 2
     },
     {
-      "shoppingListId": 0,
-      "foodId": 4,
-      "id": 3
+      "shoppingListId": 35,
+      "foodId": 2,
+      "id": 14
+    },
+    {
+      "shoppingListId": 35,
+      "foodId": 2,
+      "id": 15
+    },
+    {
+      "shoppingListId": 35,
+      "foodId": 2,
+      "id": 16
+    },
+    {
+      "shoppingListId": 35,
+      "foodId": 2,
+      "id": 17
+    },
+    {
+      "shoppingListId": 34,
+      "foodId": 1,
+      "id": 18
+    },
+    {
+      "shoppingListId": 34,
+      "foodId": 5,
+      "id": 19
     }
   ],
   "shoppingLists": [
@@ -94,20 +101,20 @@
       "id": 26
     },
     {
+      "userId": 2,
+      "id": 32
+    },
+    {
       "userId": 3,
-      "id": 27
+      "id": 33
     },
     {
       "userId": 4,
-      "id": 28
+      "id": 34
     },
     {
       "userId": 5,
-      "id": 29
-    },
-    {
-      "userId": 6,
-      "id": 30
+      "id": 35
     }
   ]
 }

@@ -25,11 +25,19 @@ class Login extends Component {
     .then(results=>{
         if(results.length>0) {
             this.props.setUser(results)
+            ApiManager.getLoggedInUserShoppingList(results[0].id)
+            .then(shoppingListArray => { 
+                console.log("SLID", shoppingListArray)
+                localStorage.setItem("shoppingLists", shoppingListArray[0].id)
+            })
             this.props.history.push("/");
         } else {
             alert("Incorrect username, email, or password")
         } 
-    })
+    },
+    
+)
+
 }
 
 

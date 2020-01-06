@@ -51,31 +51,47 @@ export default class ApplicationViews extends Component {
         {/* FOODS */}
         <Route
           exact path="/foods" render={props => {
-            return <FoodList {...props} />
-
+            // return <FoodList {...props} />
+            if (this.props.user) {
+              return <FoodList {...props} />
+            } else {
+              return <Redirect to="/login" />
+            }
           }}
         />
         <Route path="/foods/new" render={props => {
-          return <FoodForm {...props} />
+          if (this.props.user) {
+            return <FoodForm {...props} />
+          } else {
+            return <Redirect to="/login" />
+          }
         }}
         />
            <Route exact path="/foods/:foodId(\d+)" render={(props) => { 
-             console.log("Props from react-router-dom", props)
-          console.log("This component's props", this.props)
-             return <FoodDetail foodId={parseInt(props.match.params.foodId)} {...props}/>
+             if (this.props.user) {
+              return <FoodDetail foodId={parseInt(props.match.params.foodId)} {...props}/>
+            } else {
+              return <Redirect to="/login" />
+            }
            }}
            />
         <Route
          exact path="/foods/:foodId(\d+)/edit" render={props => {
+          if (this.props.user) {
             return <FoodEditForm {...props} />
+          } else {
+            return <Redirect to="/login" />
+          }
           }}
           />
 
           {/* SHOPPING LIST */}
           <Route path="/shoppinglist" render={props => {
-          return <ShoppingList {...props} />
-          
-          
+            if (this.props.user) {
+              return <ShoppingList {...props} />
+            } else {
+              return <Redirect to="/login" />
+            }
         }}
         />
       </>
