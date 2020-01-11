@@ -93,6 +93,11 @@
       "shoppingListId": 34,
       "foodId": 5,
       "id": 19
+    },
+    {
+      "shoppingListId": 26,
+      "foodId": 1,
+      "id": 20
     }
   ],
   "shoppingLists": [
