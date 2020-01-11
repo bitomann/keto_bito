@@ -23,6 +23,7 @@ class Login extends Component {
     e.preventDefault()
     ApiManager.checkUser(this.state.email, this.state.password)
     .then(results=>{
+        console.log("WHAT IS", results)
         if(results.length>0) {
             this.props.setUser(results)
             ApiManager.getLoggedInUserShoppingList(results[0].id)
